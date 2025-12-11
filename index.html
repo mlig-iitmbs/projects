@@ -13,6 +13,14 @@
         from { opacity: 0; }
         to { opacity: 1; }
     }
+    @keyframes scrollSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scrollSlow {
+  animation: scrollSlow 18s linear infinite;
+}
     .float-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .float-card:hover { transform: translateY(-10px) scale(1.02); }
     .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
@@ -86,6 +94,43 @@
   </div>
 </section>
 
+
+<section class="py-20 bg-gray-50 reveal">
+  <h2 class="text-3xl font-bold text-center mb-10">Used By</h2>
+
+  <div class="overflow-hidden relative">
+    <div class="flex space-x-10 animate-scrollSlow">
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/epochs/1695118944298.jpeg" class="h-12 opacity-80"><br>
+        <p class="text-sm text-gray-600 text-center">Councils 2024, 2025, 2026</p>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/logicloom24//storage/footerlogo.png" class="h-12 opacity-80">
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/ai4all/pi2seminar_iitmbs.png" class="h-12 opacity-80">
+      </div>
+
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/epochs/1695118944298.jpeg" class="h-12 opacity-80"><br>
+         <p class="text-sm text-gray-600 text-center">Councils 2024, 2025, 2026</p>
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/logicloom24//storage/footerlogo.png" class="h-12 opacity-80">
+      </div>
+
+      <div class="bg-white shadow-md rounded-xl p-4 w-40 h-24 flex items-center justify-center">
+        <img src="https://mlig-iitmbs.github.io/ai4all/pi2seminar_iitmbs.png" class="h-12 opacity-80">
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 <div id="evopModal"
