@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ML Series - Portals Built</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: "Ubuntu", sans-serif; font-weight: 400; font-style: normal;}
+    body { animation: fadeBody 0.6s ease-out; }
+    @keyframes fadeBody {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .float-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .float-card:hover { transform: translateY(-10px) scale(1.02); }
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0px); }
+    .glass {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    }
+    .modal-body {
+      max-height: 70vh;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
 
+<section class="relative overflow-hidden">
+
+  <div class="absolute top-0 left-0 w-80 h-80 bg-blue-200 rounded-full blur-3xl opacity-40"></div>
+  <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-40"></div>
+
+  <div class="max-w-7xl mx-auto text-center py-28 px-6 relative z-10 reveal">
+    <h1 class="text-5xl font-bold tracking-tight mb-6">
+      ML Series — <span class="text-indigo-600">Unified Automation Suite</span>
+    </h1>
+    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+      Smart, Google-integrated, machine-learning-backed platforms for elections,
+      council operations, events, exams & ML workflows — all in one ecosystem.
+    </p>
+
+    <button onclick="scrollToPortals()"
+      class="mt-8 px-8 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
+      Explore Portals ↓
+    </button>
+  </div>
+</section>
+
+
+<section id="portal-section" class="max-w-7xl mx-auto px-6 py-20">
+
+  <div class="text-center mb-14 reveal">
+    <h2 class="text-4xl font-bold mb-4">Our Portals</h2>
+    <p class="text-gray-600 text-lg">Click a module to explore features.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div onclick="openModal('evopModal')"
+      class="p-8 rounded-2xl bg-white shadow-md hover:shadow-xl cursor-pointer float-card reveal">
+      <img src="https://img.icons8.com/fluency/96/ballot.png" class="mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-center mb-2">eVoP Portal</h3>
+      <p class="text-sm text-gray-600 text-center">ML-powered e-Voting Management System</p>
+    </div>
+
+    <div onclick="openModal('impactModal')"
+      class="p-8 rounded-2xl bg-white shadow-md hover:shadow-xl cursor-pointer float-card reveal">
+      <img src="https://img.icons8.com/fluency/96/organization.png" class="mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-center mb-2">IMPACT Portal</h3>
+      <p class="text-sm text-gray-600 text-center">Integrated House & Council Operations</p>
+    </div>
+
+    <div onclick="openModal('eventModal')"
+      class="p-8 rounded-2xl bg-white shadow-md hover:shadow-xl cursor-pointer float-card reveal">
+      <img src="https://img.icons8.com/fluency/96/events.png" class="mx-auto mb-4">
+      <h3 class="text-xl font-semibold text-center mb-2">Event & ML Workflow Suite</h3>
+      <p class="text-sm text-gray-600 text-center">Events, Exams, Review, Auto-Grading</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<div id="evopModal"
+  class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6 z-50">
+  <div class="glass rounded-2xl max-w-2xl w-full p-8 fade-in shadow-xl relative">
+
+    <button onclick="closeModal('evopModal')" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900">✕</button>
+
+    <h2 class="text-3xl font-bold mb-6">eVoP Portal — ML Series e-Voting</h2>
+
+    <div class="modal-body space-y-4">
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Google Sign-in for authorised house members</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Nomination Filing with auto-verification</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Live Real-time Vote Share Dashboards</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ ML-driven anomaly detection for free & fair elections</div>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="impactModal"
+  class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6 z-50">
+  <div class="glass rounded-2xl max-w-2xl w-full p-8 fade-in shadow-xl relative">
+
+    <button onclick="closeModal('impactModal')" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900">✕</button>
+
+    <h2 class="text-3xl font-bold mb-6">IMPACT Portal — Council/House System</h2>
+
+    <div class="modal-body space-y-4">
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Verification Portal for residents & members</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Text-Only Support Forum (Discourse-style)</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Work Report Submission + Tracking System</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Grievance Redressal Workflow</div>
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">✔ Club & Fest Assistance Modules</div>
+
+    </div>
+  </div>
+</div>
+
+
+<div id="eventModal"
+  class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center p-6 z-50">
+  <div class="glass rounded-2xl max-w-2xl w-full p-8 fade-in shadow-xl relative">
+
+    <button onclick="closeModal('eventModal')" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900">✕</button>
+
+    <h2 class="text-3xl font-bold mb-6">Event Management + ML Workflow</h2>
+
+    <div class="modal-body space-y-5">
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Registration Portal</h3>
+        <p class="text-sm">Team management, custom forms, live verification.</p>
+      </div>
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Exam & Quiz Management</h3>
+        <p class="text-sm">Proctoring, leaderboard, analytics, anti-cheat.</p>
+      </div>
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Ticketing & Alerts</h3>
+        <p class="text-sm">QR check-ins, automated emails & support ticketing.</p>
+      </div>
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Reviewer Portal</h3>
+        <p class="text-sm">Rubrics, evaluation analytics, multi-level reviewing.</p>
+      </div>
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Auto-Grader</h3>
+        <p class="text-sm">Acc, F1, Precision/Recall, custom scripts.</p>
+      </div>
+
+      <div class="p-4 bg-white bg-opacity-60 rounded-xl shadow">
+        <h3 class="font-semibold">Model Test Runs</h3>
+        <p class="text-sm">Real-time experiments, ROC-AUC, comparison dashboard.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="py-10 text-center text-gray-600 text-sm reveal">
+The portals are NOT open-sourced, but one can send a request for free usage.
+</footer>
+
+
+<script>
+  function openModal(id) { document.getElementById(id).classList.remove("hidden"); }
+  function closeModal(id) { document.getElementById(id).classList.add("hidden"); }
+
+  function scrollToPortals() {
+      document.getElementById("portal-section").scrollIntoView({ behavior: "smooth" });
+  }
+
+  const reveals = document.querySelectorAll(".reveal");
+  const revealOnScroll = () => {
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) el.classList.add("active");
+    });
+  };
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll);
+</script>
+</body>
+</html>
